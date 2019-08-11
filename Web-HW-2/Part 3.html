@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3</title>
+</head>
+<body>
+<div align="left">
+  <div align="center" style="float: right">
+    <img src="img/Icon-Python.png" title="Python" class="icon" width="350px"></div>
+<h1><strong><a name="home"> HOW-TO: Программа на Python, Часть 3</a></strong></h1>
+<ul>
+  <li><em><a href="http://localhost:63342/Web-HW-2/Part%201.html?_ijt=a25daumn9i254cho27hvgkfioc">Программа на Python &mdash часть 1</a></em></li>
+  <li><em><a href="http://localhost:63342/Web-HW-2/Part%202.html?_ijt=a25daumn9i254cho27hvgkfioc">Программа на Python &mdash часть 2</a></em></li>
+  <li><em><a href="http://localhost:63342/Web-HW-2/Part%203.html?_ijt=a25daumn9i254cho27hvgkfioc">Программа на Python &mdash часть 3</a></em></li>
+</ul>
+  <h2><strong><a name="list">Содержание</a></strong></h2>
+  <h3><strong>HOW-TO: Программа на Python, Часть 3</strong></h3>
+  <ul>
+    <li><a href="#module">Модули</a></li>
+    <li><a href="#function">Функции</a></li>
+  </ul>
+  <hr>
+<p>В прошлый раз мы изучали списки,подстановку переменных, комментарии, сравнение и<br>
+  присвоение, операторы <strong>if</strong> и <strong>while</strong>. Я обещал, что в этой части мы изучим модули и<br>
+  функции. Давайте начнём.</p>
+  <h2><strong><a name="module">Модули</a></strong></h2>
+  <p><a href="#list">К содержанию</a></p>
+  <p>Модули предлагают способ расширить программирование на Python. Вы можете создать<br>
+  свои модули, использовать те, которые представляются с Python или которые написали<br>
+  другие. В самом Python есть сотни модулей, которые облегчают написание программ.<br>
+  Список модулей, поставляемых с Python, находится по адресу:<br>
+  <em><a href="https://docs.python.org/3/py-modindex.html#">https://docs.python.org/3/py-modindex.html</a></em>. Некоторые модули предназначены для определенных<br>
+  операционных систем, но большинство из них кроссплатформенные и работают<br>
+  одинаково на <a href="https://ru.wikipedia.org/wiki/Linux">Linux</a>, <a href="https://ru.wikipedia.org/wiki/Macintosh">Mac</a> и <a href="https://ru.wikipedia.org/wiki/Windows">Microsoft Windows</a>. Для использования внешнего модуля<br>
+  необходимо импортировать его в программу. Один из модулей, постоявляемых с Python,<br>
+  называется &laquo;random&raquo;. Он даёт возможность генерировать псевдослучайные числа. Мы<br>
+  используем этот модуль в нашем первом примере.</p>
+  <br>
+  <p><code>#=======================================<br>
+  # random_example.py<br>
+  # Module example using the random module<br>
+  #=======================================<br>
+  import random<br>
+  # print 14 random integers<br>
+  for cntr in range(1,15):<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;print random.randint(1,10)</code></p>
+  <p>Давайте разберем код по строкам.Первые четыре строки &mdash; это комментарии, о которых<br>
+  мы говорили в прошлый раз.Пятая строка говорит Python, что нужно использовать<br>
+  модуль &laquo;random&raquo;. Мы должны явно указать Python на это.</p>
+  <hr>
+  <h2><strong><a name="function">Функции</a></strong></h2>
+  <p><a href="#list">К содержанию</a></p>
+  <p>Когда мы импортировали модуль random, мы использовали функцию <strong>randint()</strong>. Функция<br>
+  &mdash; это блок кода, который создан для того, чтобы вызывать его в программе, обычно,<br>
+  более одного раза. Это упрощает работу над программой и предотвращает набор одного и<br>
+  того же кода снова и снова.Грубо говоря, если вам нужно написать некоторый код<br>
+  больше, чем 1-2 раза, стоит сделать его функцией. Хотя следующие два примера очень<br>
+  простые, это хорошие примеры функций. Теперь мы хотим, скажем, взять два числа,<br>
+  сложить их, перемножить, вычесть одно из другого, затем вывести на экран эти числа и <br>
+  результаты одновременно. Допустим, нам нужно сделать это три раза для трех наборов<br>
+  чисел. Тогда наш пример будет выглядеть как код ниже.</p>
+  <br>
+  <p><code>#silly example<br>
+  print '%d + %d = %d ' % (1,2,1+2)<br>
+  print '%d * %d = %d ' % (1,2,1*2)<br>
+  print '%d - %d = %d ' % (1,2,1-2)<br>
+  <br>
+  print '\n'<br>
+  print '%d + %d = %d ' % (1,4,1+4)<br>
+  print '%d * %d = %d ' % (1,4,1*4)<br>
+  print '%d - %d = %d ' % (1,4,1-4)<br>
+  <br>
+  print '\n'<br>
+  print '%d + %d = %d ' % (10,5,10+5)<br>
+  print '%d * %d = %d ' % (10,5,10*5)<br>
+  print '%d - %d = %d ' % (10,5,10-5)<br>
+  print '\n'</code></p>
+  <p>Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при<br>
+  написании. так и при внесении измененийю. Вместо этого мы создадим функцию, которую<br>
+  назовем <strong><em>&laquo;DoTwo&raquo;</em></strong>. Она будет каждый раз брать два числа, проводить математические<br>
+  операции и выводить результат. Начнем с ключевого слова <strong><em>&laquo;def&raquo;</em></strong>, которое сигнализирует<br>
+  о том, что мы собираемся определить функцию. После слова <strong><em>&laquo;def&raquo;</em></strong> добавим название<br>
+  функции и список параметров, если таковые имеются, в круглых скобках. Эту строку<br>
+  необходимо завершить двоеточием. Код функции набирается с отступом. Наш<br>
+  улучшеный просто пример (<u>&#8470;2</u>) показан ниже.</p>
+  <p><code>#silly example 2...still silly, but better<br>
+  def DoTwo (num1, num2):<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d + %d = %d ' % (num1, num2, num1+num2)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d * %d = %d ' % (num1, num2, num1*num2)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d + %d = %d ' % (num1, num2, num1+num2)<br>
+  print '\n'<br>
+  DoTwo (1,2)<br>
+  DoTwo (1,4)<br>
+  DoTwo (10,5)<br></code></p>
+  <p>Как видите, здес написано меньше кода &mdash; 8 строк вместо 12. Если нам нужно будет что-<br>
+  либо поменять в функции, мы сможем сделать это, не создавая проблем для нашей<br>
+  программы. Чтобы вызвать функцию, нужно написать ее имя и параметры.</p>
+  <p style="text-align: center;">
+    <a href="http://localhost:63342/Web-HW-2/Part%202.html?_ijt=a25daumn9i254cho27hvgkfioc"><img src="img/prev.png" align="left" alt="Предыдущая страница" title="Предыдущая страница"></a>
+    <a href="#home"><img src="img/home.png" alt="Главная" title="Главная"></a>
+    <a href="#"><img src="img/next.png "  align="right" alt="Следующая страница" title="Следующая страница"></a>
+  </p>
+</div>
+</body>
+</html>
